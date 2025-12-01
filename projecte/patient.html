@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patient Dashboard — Echhya’s Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <section class="dashboard__layout">
+    <aside class="dash-sidebar">
+      <a href="index.html" class="dash-brand">
+        <svg viewBox="0 0 48 24" width="24" height="24" aria-hidden="true">
+          <path d="M2 13h7l2.5-8 3.5 12 2.5-7 2.5 3H46"
+                fill="none" stroke="#2F80ED" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="dash-brand__text">Echhya's Care</span>
+      </a>
+
+      <nav class="dash-nav">
+        <button class="dash-nav__item dash-nav__item--active" data-p-view="dashboard">
+          <span class="dash-nav__icon">🏠</span>
+          <span>Dashboard</span>
+        </button>
+        <button class="dash-nav__item" data-p-view="appointments">
+          <span class="dash-nav__icon">📅</span>
+          <span>Appointments</span>
+        </button>
+        <button class="dash-nav__item" data-p-view="symptoms">
+          <span class="dash-nav__icon">📈</span>
+          <span>Symptoms</span>
+        </button>
+        <button class="dash-nav__item" data-p-view="medications">
+          <span class="dash-nav__icon">💊</span>
+          <span>Medications</span>
+        </button>
+      </nav>
+
+      <div class="dash-sidebar__footer">
+        <button class="dash-nav__item dash-nav__item--danger" id="btnSignOutPatient">
+          <span class="dash-nav__icon">🚪</span>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <!-- Dashboard overview -->
+      <section class="p-view" data-p-section="dashboard">
+        <header class="dash-main__header">
+          <div>
+            <h1 class="dash-main__title">Welcome back, John!</h1>
+            <p class="dash-main__subtitle">Here's your health overview for today.</p>
+          </div>
+        </header>
+
+        <section class="dash-row dash-row--stats">
+          <article class="card stat-card">
+            <div class="stat-card__label">Next Appointment</div>
+            <div class="stat-card__value">2 days</div>
+            <div class="stat-card__meta">With Dr. Echhya Bhattarai</div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__label">Medications Due</div>
+            <div class="stat-card__value">1</div>
+            <div class="stat-card__meta">Today</div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__label">Symptoms Logged</div>
+            <div class="stat-card__value">2</div>
+            <div class="stat-card__meta">This week</div>
+          </article>
+          <article class="card stat-card">
+            <div class="stat-card__label">Health Score</div>
+            <div class="stat-card__value">85%</div>
+            <div class="stat-card__meta">Stable</div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Appointments -->
+      <section class="p-view is-hidden" data-p-section="appointments">
+        <header class="dash-main__header">
+          <div>
+            <h1 class="dash-main__title">Appointments</h1>
+            <p class="dash-main__subtitle">Upcoming and past appointments.</p>
+          </div>
+        </header>
+
+        <section class="dash-row">
+          <article class="card">
+            <h2 class="card__title">Upcoming Appointment</h2>
+            <ul class="list list--appointments">
+              <li class="list-item list-item--appointment">
+                <div class="list-item__main">
+                  <span class="list-item__title">Dr. Echhya Bhattarai</span>
+                  <span class="list-item__subtitle">Follow-up</span>
+                </div>
+                <div class="list-item__meta">
+                  <span class="list-item__date">2024-02-15</span>
+                  <span class="list-item__time">10:00 AM</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </section>
+      </section>
+
+      <!-- Symptoms -->
+      <section class="p-view is-hidden" data-p-section="symptoms">
+        <header class="dash-main__header">
+          <div>
+            <h1 class="dash-main__title">Symptoms</h1>
+            <p class="dash-main__subtitle">Log and review your symptoms.</p>
+          </div>
+        </header>
+
+        <section class="dash-row">
+          <article class="card">
+            <h2 class="card__title">Example Symptom Logs</h2>
+            <ul class="sym-log-list">
+              <li class="sym-log-item">
+                <div class="sym-log-dot sym-log-dot--orange"></div>
+                <div class="sym-log-text">
+                  <strong>Headache</strong>
+                  <span>Severity: 6/10 · 2024-02-10</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </section>
+      </section>
+
+      <!-- Medications -->
+      <section class="p-view is-hidden" data-p-section="medications">
+        <header class="dash-main__header">
+          <div>
+            <h1 class="dash-main__title">Medications</h1>
+            <p class="dash-main__subtitle">
+              View today's schedule and all your medications.
+            </p>
+          </div>
+        </header>
+
+        <section class="dash-row">
+          <div class="med-stats-grid">
+            <article class="card med-stat-card">
+              <div class="med-stat-icon">💊</div>
+              <div class="med-stat-label">Total Medications</div>
+              <div class="med-stat-value">4</div>
+            </article>
+            <article class="card med-stat-card">
+              <div class="med-stat-icon med-stat-icon--warning">⏱</div>
+              <div class="med-stat-label">Due Today</div>
+              <div class="med-stat-value">1</div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+  </section>
+
+  <script src="patient.js"></script>
+</body>
+</html>

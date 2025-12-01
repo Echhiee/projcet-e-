@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctor Dashboard — Echhya’s Care</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <section class="dashboard__layout">
+    <aside class="dash-sidebar">
+      <a href="index.html" class="dash-brand">
+        <svg viewBox="0 0 48 24" width="24" height="24" aria-hidden="true">
+          <path d="M2 13h7l2.5-8 3.5 12 2.5-7 2.5 3H46"
+                fill="none" stroke="#2F80ED" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="dash-brand__text">MediTrack Pro</span>
+      </a>
+
+      <nav class="dash-nav">
+        <button class="dash-nav__item dash-nav__item--active">
+          <span class="dash-nav__icon">🏠</span>
+          <span>Dashboard</span>
+        </button>
+      </nav>
+
+      <div class="dash-sidebar__footer">
+        <button class="dash-nav__item dash-nav__item--danger" id="btnSignOutDoctor">
+          <span class="dash-nav__icon">🚪</span>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <header class="dash-main__header">
+        <div>
+          <h1 class="dash-main__title">Good morning, Dr. Anderson!</h1>
+          <p class="dash-main__subtitle">You have 3 appointments today.</p>
+        </div>
+      </header>
+
+      <section class="dash-row dash-row--stats">
+        <article class="card stat-card">
+          <div class="stat-card__label">Total Patients</div>
+          <div class="stat-card__value">4</div>
+          <div class="stat-card__meta">Active patients</div>
+        </article>
+        <article class="card stat-card">
+          <div class="stat-card__label">Today's Appointments</div>
+          <div class="stat-card__value">3</div>
+          <div class="stat-card__meta">Scheduled</div>
+        </article>
+      </section>
+    </main>
+  </section>
+
+  <script src="doctor.js"></script>
+</body>
+</html>
