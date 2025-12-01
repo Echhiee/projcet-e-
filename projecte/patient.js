@@ -38,7 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // sign out
   if (signOutBtn) {
+    function deleteCookie(name) {
+      document.cookie = encodeURIComponent(name) + "=;path=/;max-age=0";
+    }
+
     signOutBtn.addEventListener("click", () => {
+      deleteCookie("auth");
+      deleteCookie("user");
       window.location.href = "index.html";
     });
   }
